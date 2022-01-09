@@ -7,14 +7,49 @@
     <title>Brüche kürzen</title>
     <script src="script.js"></script>
 </head>
+<style>
+    .width_adjustment {
+        width: 80px;
+    }
+    .bruchstrich {
+        width: 200px;
+        border: black solid 1px;
+    }
+    .bruchstrich.schmal {
+        width: 80px;
+        border: black solid 1px;
+    }
+</style>
 <body>
     <form name="form1">
-        Zahl1:<input type="text" name="a" ><br>
-        Zahl2:<input type="text" name="b" ><br>
-        <input type="button" name="ggt" value="ggT berechnen" onclick="groessterGemeinsamerTeiler(a.value, b.value)"><br>
-        ggT: <output id="ggT"></output><br>
-        <input type="button" name="kgv" value="kgV berechnen" onclick="kleinstesGemeinsamesVielfaches(a.value, b.value)"><br>
-        <input type="button" value="Bruch k&uuml;rzen" onclick="berekuerzen()"><br>
-        Ergebnis: <output id="kgv"></output> 
-</body>
+        <input type="text" name="b1o" id="br1oben" class="width_adjustment">
+        <input type="text" id="spacerunten" style="width: 20px; border: transparent;" disabled>
+        <input type="text" name="b2o" id="br2oben" class="width_adjustment">
+        <input type="text" style="width: 60px; border: transparent;" disabled>
+        <output id="eo" style="text-align: center; min-width: 80px; display: inline-block;"></output>
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td><div class="bruchstrich schmal"></div><br></td>
+                <td style="width: 7px;"></td>
+                <td>+</td>
+                <td style="width:7px;"></td>
+                <td><div class="bruchstrich schmal"></div><br></td>
+                <td style="font-size: 200%;"><input type="text" style="width: 15px; border: transparent;" disabled> =<br></td>
+                <td><input type="text" style="width: 12px; border: transparent;"></td>
+                <td><div class="bruchstrich schmal"></div><br></td>
+            </tr>
+        </table>
+        <div>
+        <input type="text" name="b1u" id="br1unten" class="width_adjustment">
+        <input type="text" style="width: 20px; border: transparent;" disabled>
+        <input type="text" name="b2u" id="br2unten" class="width_adjustment">
+        <input type="text" style="width: 60px; border: transparent;" disabled>
+        <output id="eu" style="text-align: center; min-width: 80px; display: inline-block;"></output>
+        </div>
+        <br>
+        <input type="button" value="Bruch addieren und kürzen" id="bruchkurzundaddieren" onclick="bruchAddierenUndKuerzen(b1o.value, b1u.value, b2o.value, b2u.value)">
+        <p id="errors"></p>
+    </body>
 </html>
