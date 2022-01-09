@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brüche kürzen</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form name="form1">
+        Zahl1:<input type="text" name="a" ><br>
+        Zahl2:<input type="text" name="b" ><br>
+        <input type="button" name="ggt" value="ggT berechnen" onclick="groessterGemeinsamerTeiler(a.value, b.value)"><br>
+        ggT: <output id="ggT"></output><br>
+        <input type="button" name="kgv" value="kgV berechnen" onclick="kleinstesGemeinsamesVielfaches(a.value, b.value)"><br>
+        <input type="button" value="Bruch k&uuml;rzen" onclick="berekuerzen()"><br>
+        Ergebnis: <output id="kgv"></output> 
+</body>
+</html>
