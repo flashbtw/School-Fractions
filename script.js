@@ -1,20 +1,30 @@
 function groessterGemeinsamerTeiler(teiler1,teiler2) {
+    
+    // converting both "teiler variablles to Integers
     t1 = parseInt(teiler1);
     t2 = parseInt(teiler2);
     do {
+      // Divide both variables and check if a leftover is there.
+      /* e.g.
+                5/2 = 2 (Leftover 1)
+      */
       rest = t1%t2;
       t1=t2;
       t2=rest;
+      //loop until leftover is 0 and the biggest divider of both variables is reached
     } while (rest>0);
+    // Return the biggest divider
     return t1;
 
 }
 
 function kleinstesGemeinsamesVielfaches(number1,number2) {
-
+    // Convert both number variables to Integers and name them n1 and n2
     n1 = parseInt(number1);
     n2 = parseInt(number2);
+    // get the biggest shared divider from n1 and n2
     ggt = groessterGemeinsamerTeiler(n1, n2);
+    // build the smallest shared multiple of both numbers and return it
     kgV = (n1 * n2) / ggt;
     return kgV;
 
@@ -61,8 +71,11 @@ function bruchAddierenUndKuerzen(br1o, br1u, br2o, br2u) {
 }
 
 function validationOfNumbers(n1, n2, n3, n4) {
+    
+    // declaring the variables
     let valid = true;
 
+    // check if any number is not a number
     if (isNaN(n1)) {
         valid = false;
     } else if (isNaN(n2)) {
@@ -72,5 +85,6 @@ function validationOfNumbers(n1, n2, n3, n4) {
     } else if (isNaN(n4)) {
         valid = false;
     }
+    // return if all numbers are valid numbers
     return valid;
 }
